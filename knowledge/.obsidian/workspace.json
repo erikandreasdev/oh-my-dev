@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "SSH"
             }
+          },
+          {
+            "id": "2b33e733b9b276a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Unicode.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Unicode"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SSH.md",
+                "file": "Unicode.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for SSH"
+              "title": "Backlinks for Unicode"
             }
           },
           {
@@ -112,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SSH.md",
+                "file": "Unicode.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from SSH"
+              "title": "Outgoing links from Unicode"
             }
           },
           {
@@ -139,10 +154,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SSH.md"
+                "file": "Unicode.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of SSH"
+              "title": "Outline of Unicode"
             }
           }
         ]
@@ -162,9 +177,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fc5b3a0332fc3cfc",
+  "active": "2b33e733b9b276a9",
   "lastOpenFiles": [
     "SSH.md",
+    "Unicode.md",
     "Welcome.md"
   ]
 }
