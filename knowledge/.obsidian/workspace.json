@@ -1,0 +1,170 @@
+{
+  "main": {
+    "id": "1dfe0d59d1705ae3",
+    "type": "split",
+    "children": [
+      {
+        "id": "423687c4605d9f85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc5b3a0332fc3cfc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SSH.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SSH"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dbfff88eed780a42",
+    "type": "split",
+    "children": [
+      {
+        "id": "bee19ecddcb1e87e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2634ae269a44773f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f5caa5c24131959f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b280768e128b5086",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fde5fc407e5f2ed6",
+    "type": "split",
+    "children": [
+      {
+        "id": "be2f85b492a8cd6e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9d300173a60c766",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "SSH.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for SSH"
+            }
+          },
+          {
+            "id": "3493ef1ae3a3afb2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "SSH.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from SSH"
+            }
+          },
+          {
+            "id": "3561594ff3ddf1d3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a3841a443b506e07",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "SSH.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of SSH"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "fc5b3a0332fc3cfc",
+  "lastOpenFiles": [
+    "SSH.md",
+    "Welcome.md"
+  ]
+}
