@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentals/Base64.md",
+                "file": "OS/Compilers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Base64"
+              "title": "Compilers"
             }
           }
         ],
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fundamentals/Base64.md",
+                "file": "OS/Compilers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Base64"
+              "title": "Backlinks for Compilers"
             }
           },
           {
@@ -141,12 +141,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fundamentals/Base64.md",
+                "file": "OS/Compilers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Base64"
+              "title": "Outgoing links from Compilers"
             }
           },
           {
@@ -168,10 +168,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fundamentals/Base64.md"
+                "file": "OS/Compilers.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Base64"
+              "title": "Outline of Compilers"
             }
           }
         ]
@@ -191,11 +191,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2634ae269a44773f",
+  "active": "3f3a06cd9115e390",
   "lastOpenFiles": [
+    "Security/OAuth.md",
+    "OS/Compilers.md",
+    "OS/IPC.md",
+    "Security",
+    "OS/Key Points on the Lifecycle of a Process in Unix Systems.md",
+    "Fundamentals/Exit codes.md",
+    "OS",
+    "Fundamentals/Base64.md",
     "Fundamentals",
     "Git/Tracking changes.md",
-    "Fundamentals/Base64.md",
     "Git/Edit & view commits.md",
     "Git/Cherry picking & checkout options.md",
     "Git/Conventional commits.md",
