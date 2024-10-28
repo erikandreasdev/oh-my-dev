@@ -1,44 +1,83 @@
 ### Components of GitHub Actions
 
-| Component  | Description                                                                                                                                                                      | Example                      |
-|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| **Events** | Triggers that start workflows. Examples include `push`, `pull_request`, or a scheduled `cron`.                                                                                  | `on: push`                   |
-| **Workflows** | Composed of jobs, stored in `.github/workflows`, triggered by an event.                                                                                                   | `.github/workflows/build.yml`|
-| **Jobs**    | A series of steps that run in the same runner environment, can be parallel or sequential.                                                                                       | `jobs: build`                |
-| **Steps**   | Individual tasks inside a job, including commands and actions.                                                                                                                  | `steps: - name: Build step`  |
-| **Actions** | Reusable tasks from GitHub Marketplace or custom ones.                                                                                                                         | `uses: actions/checkout@v2`  |
-| **Runners** | Virtual machines (hosted by GitHub or self-hosted) where jobs execute.                                                                                                          | `runs-on: ubuntu-latest`     |
+|Component|Description|Example|
+|---|---|---|
+|**Workflow**|A collection of jobs that define an automated process. Workflows are stored in `.github/workflows/`.|`name: CI Workflow`|
+|**Event**|Triggers that initiate workflows, such as `push`, `pull_request`, or scheduled events.|`on: push`|
+|**Job**|A set of steps that runs on a specific runner. Multiple jobs can run in parallel or in sequence.|`jobs: build`|
+|**Step**|A single task within a job, consisting of commands or actions.|`- name: Run Tests`|
+|**Action**|A reusable command or set of commands that accomplishes a task, can be used from GitHub Marketplace.|`uses: actions/checkout@v2`|
+|**Runner**|A server that runs the workflows, can be GitHub-hosted (Ubuntu, Windows, macOS) or self-hosted.|`runs-on: ubuntu-latest`|
+|**Secrets**|Secure environment variables stored in GitHub for sensitive data like API keys and credentials.|`${{ secrets.MY_SECRET_KEY }}`|
+|**Environment**|Configurations that hold variables for specific environments like `production` or `staging`.|`environment: production`|
+|**Matrix**|Allows jobs to run on multiple versions or configurations, creating parallel job runs.|`strategy: matrix: [node: 12, 14]`|
+|**Artifacts**|Files created by workflows (like build outputs) that can be downloaded or used in other jobs.|`- name: Upload Artifact`|
+|**Cache**|Reusable data (like dependencies) that speeds up subsequent workflow runs by caching files.|`uses: actions/cache@v2`|
+|**Permissions**|Defines specific repository permissions for workflow actions, enhancing security.|`permissions: contents: read`|
+|**Workflow Dispatch**|A manual trigger that lets users run workflows manually from the GitHub Actions UI.|`on: workflow_dispatch`|
+|**Reusable Workflow**|A workflow designed to be called by other workflows, promoting reusability across repositories.|`workflow_call: from: another-repo/.github/actions/`|--
 
 ---
-
 ### Workflow Syntax Cheat Sheet
 
 - **Workflow YAML Location**: Place YAML files in `.github/workflows/`
 - **Basic Syntax**:
 
-  ```yaml
-  name: Workflow Name
-  on: push  # Triggered by push event
+```yaml
+# .github/workflows/basic-workflow.yml
 
-  jobs:
-    job_name:
-      runs-on: ubuntu-latest  # Runner type
-      steps:
-        - name: Step Description
-          run: echo "Hello, GitHub Actions!"
-  ```
+name: Basic Workflow  # Optional - names the workflow
+
+on: push  # Event that triggers the workflow; "push" is one of the simplest
+
+jobs:
+  example-job:  # Name of the job
+    runs-on: ubuntu-latest  # Runner (environment) for the job
+    
+    steps:  # Steps define the tasks in the job
+      - name: Checkout code  # Step 1: Checks out the repository code
+        uses: actions/checkout@v2
+
+      - name: Run a script  # Step 2: Runs a simple script
+        run: echo "Hello, GitHub Actions!"
+
+```
 
 ---
 
 ### Event Types and Triggers
-
-| Event       | Description                                  | Example                     |
-|-------------|----------------------------------------------|-----------------------------|
-| `push`      | Triggered on code push                       | `on: push`                  |
-| `pull_request` | Triggered on PR open/update/close        | `on: pull_request`          |
-| `schedule`  | Triggered at specific intervals (cron)       | `on: schedule`              |
-| `workflow_dispatch` | Manual trigger from the GitHub UI   | `on: workflow_dispatch`     |
-| `repository_dispatch` | External events using webhooks    | `on: repository_dispatch`   |
+|Event|Description|
+|---|---|
+|`push`|Triggered on a push to a branch or tag.|
+|`pull_request`|Triggered when a pull request is opened, updated, or closed.|
+|`pull_request_target`|Triggered on pull requests from a fork targeting the base repository. Useful for security-sensitive workflows.|
+|`create`|Triggered when a branch or tag is created.|
+|`delete`|Triggered when a branch or tag is deleted.|
+|`workflow_dispatch`|Triggered manually from the GitHub Actions UI.|
+|`repository_dispatch`|Triggered by an external system using a GitHub API request.|
+|`schedule`|Triggered at a specified time using cron syntax.|
+|`issue_comment`|Triggered when a comment is created, edited, or deleted in an issue.|
+|`issues`|Triggered when an issue is created, edited, labeled, or closed.|
+|`label`|Triggered when a label is created, edited, or deleted.|
+|`fork`|Triggered when someone forks the repository.|
+|`star`|Triggered when someone stars the repository.|
+|`watch`|Triggered when someone watches the repository.|
+|`release`|Triggered when a release is created, edited, published, unpublished, or deleted.|
+|`deployment`|Triggered when a deployment is created.|
+|`deployment_status`|Triggered when the deployment status changes (e.g., success, failure).|
+|`status`|Triggered when the status of a GitHub commit changes.|
+|`check_run`|Triggered when a check run is created, updated, or completed.|
+|`check_suite`|Triggered when a check suite is created, requested, or completed.|
+|`page_build`|Triggered when a GitHub Pages site is built or deployed.|
+|`public`|Triggered when a private repository is made public.|
+|`workflow_run`|Triggered when a workflow run is completed and allows subsequent workflows to be triggered conditionally.|
+|`gollum`|Triggered when a Wiki page is created or updated.|
+|`project`|Triggered when a project board is created, updated, or deleted.|
+|`project_card`|Triggered when a project card is created, moved, or deleted.|
+|`project_column`|Triggered when a project column is created, updated, or deleted.|
+|`repository`|Triggered when a repository is created, deleted, archived, unarchived, or renamed.|
+|`member`|Triggered when a collaborator is added to or removed from the repository.|
+|`workflow_call`|Enables reusable workflows that can be triggered by other workflows within the repository.|
 
 ---
 
@@ -83,12 +122,13 @@ jobs:
 
 ### Commonly Used Actions
 
-| Action                    | Description                                     | Example                                 |
-|---------------------------|-------------------------------------------------|-----------------------------------------|
-| `actions/checkout@v2`     | Checks out code from the repository             | `uses: actions/checkout@v2`             |
-| `actions/setup-node@v3`   | Sets up Node.js environment                     | `uses: actions/setup-node@v3`           |
-| `actions/cache@v2`        | Caches dependencies                             | `uses: actions/cache@v2`                |
-| `docker/build-push-action@v2` | Builds and pushes Docker images         | `uses: docker/build-push-action@v2`     |
+| Action                        | Description                         | Example                             |
+| ----------------------------- | ----------------------------------- | ----------------------------------- |
+| `actions/checkout@v2`         | Checks out code from the repository | `uses: actions/checkout@v2`         |
+| `actions/setup-node@v3`       | Sets up Node.js environment         | `uses: actions/setup-node@v3`       |
+| `actions/cache@v2`            | Caches dependencies                 | `uses: actions/cache@v2`            |
+| `docker/build-push-action@v2` | Builds and pushes Docker images     | `uses: docker/build-push-action@v2` |
+Full list -> https://github.com/marketplace
 
 ---
 
