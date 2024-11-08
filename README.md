@@ -11,9 +11,3 @@ Here's what you'll find in this repo:
 - **guides/** - Step-by-step tutorials on various development workflows and tool setups
 - **scripts/** - Useful shell scripts and automation snippets
 - **configs/** - Configuration files for tools and editors to optimize your workflow
-
-## 🚀 Getting Started
-
-1. **Clone the repo**:
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
