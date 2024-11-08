@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Shell/Untitled.md",
+                "file": "Shell/Shell Variables.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Shell Variables"
             }
           }
         ]
@@ -164,7 +164,7 @@
   },
   "active": "8d767d16d1b0b426",
   "lastOpenFiles": [
-    "Shell/Untitled.md",
+    "Shell/Shell Variables.md",
     "Shell",
     "Fundamentals/Exit codes.md",
     "Fundamentals/Base64.md",
